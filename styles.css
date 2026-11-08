@@ -1,0 +1,1306 @@
+
+/* =========================================
+   THE AURELIA GRAND
+   COMPLETE WEBSITE STYLESHEET
+========================================= */
+
+
+/* =========================================
+   1. GLOBAL SETTINGS AND COLOUR VARIABLES
+========================================= */
+
+:root {
+    --primary-color: #142B27;
+    --secondary-color: #C5A46D;
+    --background-color: #F7F4ED;
+    --white-color: #FFFFFF;
+    --dark-color: #292929;
+    --text-color: #666666;
+    --light-green: #E9EEEA;
+
+    --font-heading: Georgia, 'Times New Roman', serif;
+    --font-body: Arial, Helvetica, sans-serif;
+
+    --transition: all 0.3s ease;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-subtitle {
+    color: var(--secondary-color);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.section-heading h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.section-heading > p:last-child {
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+
+/* =========================================
+   2. HEADER AND NAVIGATION
+========================================= */
+
+.header {
+    background-color: var(--white-color);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+.header .container {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 21px;
+    font-weight: bold;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.logo span {
+    display: block;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--secondary-color);
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.header-booking {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 13px 22px;
+    font-size: 13px;
+    transition: var(--transition);
+}
+
+.header-booking:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: var(--transition);
+}
+
+
+/* =========================================
+   3. HERO SECTION
+========================================= */
+
+.hero {
+    min-height: 680px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--primary-color);
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 25, 21, 0.82),
+        rgba(10, 25, 21, 0.52),
+        rgba(10, 25, 21, 0.15)
+    );
+}
+
+.hero-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 100px 0;
+    color: var(--white-color);
+    animation: fadeUp 1s ease both;
+}
+
+.hero-subtitle {
+    color: var(--secondary-color);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+    animation: fadeUp 1s ease 0.2s both;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.15;
+    font-weight: 400;
+    max-width: 750px;
+    margin-bottom: 25px;
+    animation: fadeUp 1s ease 0.4s both;
+}
+
+.hero-description {
+    max-width: 550px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 35px;
+    animation: fadeUp 1s ease 0.6s both;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    animation: fadeUp 1s ease 0.8s both;
+}
+
+
+/* HERO ANIMATIONS */
+
+@keyframes heroZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   4. BUTTON STYLES
+========================================= */
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--white-color);
+    border-color: var(--white-color);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--white-color);
+    color: var(--white-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 14px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    transition: var(--transition);
+}
+
+.text-link:hover {
+    color: var(--secondary-color);
+}
+
+
+/* =========================================
+   5. ABOUT SECTION
+========================================= */
+
+.about {
+    background-color: var(--background-color);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.about-image {
+    height: 480px;
+    overflow: hidden;
+}
+
+.about-image img {
+    height: 100%;
+    transition: var(--transition);
+}
+
+.about-image:hover img {
+    transform: scale(1.04);
+}
+
+.about-text h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 42px;
+    line-height: 1.25;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.about-text p:not(.section-subtitle) {
+    color: var(--text-color);
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.about-text .text-link {
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   6. ROOMS AND SUITES SECTION
+========================================= */
+
+.rooms {
+    background-color: var(--white-color);
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.room-card {
+    background-color: var(--background-color);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.room-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.room-image img {
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.room-card:hover .room-image img {
+    transform: scale(1.08);
+}
+
+.room-details {
+    padding: 28px;
+}
+
+.room-details h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.room-details > p {
+    color: var(--text-color);
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.room-price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 22px;
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+.room-price strong {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.room-details .btn {
+    width: 100%;
+}
+
+
+/* =========================================
+   7. HOTEL EXPERIENCES SECTION
+========================================= */
+
+.experiences {
+    background-color: var(--background-color);
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.experience-card {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    background-color: var(--primary-color);
+}
+
+.experience-card img {
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+
+.experience-card:hover img {
+    transform: scale(1.1);
+}
+
+.experience-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        transparent 75%
+    );
+}
+
+.experience-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 30px;
+    color: var(--white-color);
+}
+
+.experience-content h3 {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.experience-content p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================
+   8. DINING SECTION
+========================================= */
+
+.dining {
+    background-color: var(--white-color);
+}
+
+.dining-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.dining-image {
+    height: 450px;
+    overflow: hidden;
+}
+
+.dining-image img {
+    height: 100%;
+    transition: var(--transition);
+}
+
+.dining-image:hover img {
+    transform: scale(1.04);
+}
+
+.dining-text h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 22px;
+}
+
+.dining-text > p:not(.section-subtitle) {
+    color: var(--text-color);
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   9. GALLERY SECTION
+========================================= */
+
+.gallery {
+    background-color: var(--background-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 230px;
+    gap: 15px;
+}
+
+.gallery-grid img {
+    height: 100%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.025);
+    filter: brightness(0.85);
+}
+
+.gallery-grid img:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+
+/* =========================================
+   10. TESTIMONIALS SECTION
+========================================= */
+
+.testimonials {
+    background-color: var(--white-color);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.testimonial-card {
+    background-color: var(--background-color);
+    padding: 35px 28px;
+    border-bottom: 3px solid var(--secondary-color);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.07);
+}
+
+.testimonial-card > p {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.testimonial-card h3 {
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.testimonial-card span {
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+
+/* =========================================
+   11. RESERVATION SECTION
+========================================= */
+
+.reservations {
+    background-color: var(--primary-color);
+}
+
+.reservation-content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 70px;
+}
+
+.reservation-text {
+    color: var(--white-color);
+    position: sticky;
+    top: 120px;
+}
+
+.reservation-text h2 {
+    font-family: var(--font-heading);
+    font-size: 43px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 22px;
+}
+
+.reservation-text > p:last-child {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+}
+
+.booking-form {
+    background-color: var(--white-color);
+    padding: 40px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #DDDDDD;
+    outline: none;
+    background-color: var(--white-color);
+    color: var(--dark-color);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(197, 164, 109, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.booking-form > .btn {
+    width: 100%;
+    border: none;
+}
+
+.form-note {
+    color: var(--text-color);
+    font-size: 11px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+/* =========================================
+   12. CONTACT SECTION
+========================================= */
+
+.contact {
+    background-color: var(--background-color);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.contact-item {
+    background-color: var(--white-color);
+    text-align: center;
+    padding: 35px 20px;
+    border-bottom: 2px solid var(--secondary-color);
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item h3 {
+    font-family: var(--font-heading);
+    font-size: 21px;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.contact-item p {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   13. FOOTER SECTION
+========================================= */
+
+.footer {
+    background-color: #0D1F1B;
+    color: var(--white-color);
+    padding: 75px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 55px;
+}
+
+.footer .logo {
+    color: var(--white-color);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    max-width: 280px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    color: var(--secondary-color);
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+.footer-links ul li,
+.footer-social ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links a,
+.footer-social a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    transition: var(--transition);
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-bottom a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* =========================================
+   14. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .header .container {
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .about-content,
+    .dining-content {
+        gap: 35px;
+    }
+
+    .rooms-grid,
+    .experiences-grid {
+        gap: 18px;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   15. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    /* MOBILE HEADER */
+
+    .header .container {
+        min-height: 75px;
+    }
+
+    .header-booking {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1002;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        padding: 20px 5%;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    /* MOBILE HERO */
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero-content {
+        padding: 80px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+
+    /* MOBILE ABOUT */
+
+    .about-content,
+    .dining-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image,
+    .dining-image {
+        height: 350px;
+    }
+
+    .about-text h2,
+    .dining-text h2 {
+        font-size: 34px;
+    }
+
+
+    /* MOBILE ROOMS */
+
+    .rooms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room-image {
+        height: 210px;
+    }
+
+    .room-details {
+        padding: 20px;
+    }
+
+
+    /* MOBILE EXPERIENCES */
+
+    .experiences-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experience-card {
+        height: 350px;
+    }
+
+
+    /* MOBILE GALLERY */
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+    }
+
+
+    /* MOBILE TESTIMONIALS */
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* MOBILE RESERVATION */
+
+    .reservation-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .reservation-text {
+        position: static;
+    }
+
+    .reservation-text h2 {
+        font-size: 35px;
+    }
+
+    .booking-form {
+        padding: 25px;
+    }
+
+
+    /* MOBILE FOOTER */
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 20px;
+    }
+
+}
+
+
+/* =========================================
+   16. SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .hero {
+        min-height: 570px;
+    }
+
+    .hero-content h1 {
+        font-size: 37px;
+    }
+
+    .hero-subtitle {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 260px;
+    }
+
+    .btn {
+        padding: 13px 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .about-image,
+    .dining-image {
+        height: 280px;
+    }
+
+    .rooms-grid,
+    .experiences-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-image {
+        height: 250px;
+    }
+
+    .experience-card {
+        height: 380px;
+    }
+
+    .gallery-grid {
+        grid-auto-rows: 140px;
+        gap: 8px;
+    }
+
+    .booking-form {
+        padding: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================
+   17. ACCESSIBILITY: REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* ROOM INQUIRY BUTTONS */
+
+.room-inquire-button {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: #142B27;
+    color: #C5A46D;
+    border: 1px solid #C5A46D;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.room-inquire-button:hover {
+    background-color: #C5A46D;
+    color: #142B27;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* GALLERY LIGHTBOX */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 2px solid #C5A46D;
+    animation: lightboxZoom 0.3s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    background: none;
+    border: none;
+    color: #C5A46D;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.lightbox-close:hover {
+    color: #FFFFFF;
+}
+
+@keyframes lightboxZoom {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Make gallery images clickable */
+
+#gallery img {
+    cursor: pointer;
+}
+
+/* =========================================
+   18. SCROLL REVEAL ANIMATIONS
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Accessibility: keep content visible for users
+   who prefer reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
